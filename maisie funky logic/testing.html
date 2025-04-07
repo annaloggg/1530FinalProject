@@ -1,0 +1,21 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function testJS() {
+        var b = document.getElementById('name').value,
+            url = 'http://path_to_your_html_files/next.html?name=' + encodeURIComponent(b);
+
+        document.location.href = url;
+    }
+</script>
