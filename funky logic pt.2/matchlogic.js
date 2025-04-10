@@ -1,6 +1,6 @@
 // matchLogic.js
 
-// Simulating syllabus keywords (e.g., from parsed upload1)
+// simulating syllabus keywords (e.g., from parsed upload1)
 const syllabusKeywords = ["integration", "u-substitution", "calculus"];
 
 // Load videos from videos.html and match them
@@ -8,7 +8,7 @@ async function findMatchingVideos() {
   const response = await fetch('videos.html');
   const text = await response.text();
 
-  // Create a DOM parser
+  // create a DOM parser
   const parser = new DOMParser();
   const doc = parser.parseFromString(text, 'text/html');
 
@@ -24,10 +24,10 @@ async function findMatchingVideos() {
     }
   });
 
-  // Save matches to use in live display
+  // save matches to use in live display
   localStorage.setItem('recommendedVideos', JSON.stringify(matches));
   console.log('Matched Videos:', matches);
 }
 
-// Run the matching logic
+// run the matching logic
 findMatchingVideos();
