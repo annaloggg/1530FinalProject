@@ -3,12 +3,13 @@
 // simulating syllabus keywords (e.g., from parsed upload1)
 const syllabusKeywords = ["integration", "u-substitution", "calculus"];
 
-// Load videos from videos.html and match them
+// load videos from videos.html and match them
 async function findMatchingVideos() {
   const response = await fetch('videos.html');
   const text = await response.text();
 
   // create a DOM parser
+  //why is this not workingggg
   const parser = new DOMParser();
   const doc = parser.parseFromString(text, 'text/html');
 
