@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
     fileInput.addEventListener('change', function(event) {
         const file = event.target.files[0];
         if (!file) return;
-
         // show file name
         fileName.textContent = file.name;
         fileInfo.classList.remove('hidden');
