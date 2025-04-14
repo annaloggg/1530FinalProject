@@ -1,0 +1,228 @@
+/* 基础样式 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* 卡片样式 */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 0.875rem;
+}
+
+/* 上传区域样式 */
+.upload-container {
+    margin-bottom: 1.5rem;
+}
+
+.upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 8rem;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    padding: 1rem;
+}
+
+.upload-area:hover {
+    background-color: #f0f0f0;
+}
+
+.upload-icon {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.upload-text {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.upload-hint {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.hidden-input {
+    display: none;
+}
+
+/* 文件信息样式 */
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* 加载指示器样式 */
+.loading-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 内容预览样式 */
+.content-preview {
+    margin-top: 1.5rem;
+}
+
+.preview-container {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 0.5rem 0 1rem;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 0.875rem;
+    font-family: monospace;
+}
+
+/* 按钮样式 */
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.center-align {
+    justify-content: center;
+}
+
+.button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button-outline {
+    background-color: white;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+.button-outline:hover {
+    background-color: #f5f5f5;
+}
+
+.button-primary {
+    background-color: #3498db;
+    border: 1px solid #3498db;
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: #2980b9;
+}
+
+/* 分析页面样式 */
+.analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .analysis-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.analysis-card {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+.analysis-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.analysis-results {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.analysis-item h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+/* 辅助类 */
+.hidden {
+    display: none;
+}
