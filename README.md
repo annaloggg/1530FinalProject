@@ -1,3 +1,4 @@
 # 1530FinalProject
-For anyone need to use the content grab from the txt file:
-You can get from the localStorage, keyName="syllabusContent"
+Database is on local server. 
+To Run a Database, run in command:
+npx json-server --watch db.json --port 8000
