@@ -1,3 +1,4 @@
+var courseURL = new URL("http://localhost:8000/Courses");
 document.addEventListener('DOMContentLoaded', function() {
     // Get DOM elements
     const fileInput = document.getElementById('fileInput');
@@ -64,9 +65,14 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Upload a syllabus file first!');
             return;
         }
+
+        const syllabusContent=localStorage.getItem("syllabusContent");
+        console.log(syllabusContent);
+        addOneCourseEntry(syllabusContent).then(()=>{
+            localStorage.removeItem('syllabusContent');
+            localStorage.removeItem('syllabusFileName');
+        })
         
-        // TODO: jump to certain page
-        window.location.href = '';
     });
 
     // Drag and drop
@@ -97,3 +103,58 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+async function addOneCourseEntry(courseSyllabusContent) {
+
+
+    // creating a course object
+    let newCourse = {
+        "Subject" : "MATH",
+        "CourseCode" : "0010",
+        "CourseName" : "INTRODUCTION TO CALCULUS",
+        "SyllabusContent" : courseSyllabusContent
+    }
+
+    // issuing an HTTP Post Request
+    await httpPostRequest(courseURL, newCourse);
+}
+
+async function httpGetRequest(theUrl) {
+    return await fetch(theUrl)
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            return data;
+        })
+        .catch(error => console.error('Error:', error));
+};
+
+async function httpPostRequest(theUrl, newBlog) {
+    return await fetch(theUrl, {
+        method: 'POST',
+        body: JSON.stringify(newBlog),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        }
+    })
+        .catch(error => console.error('Error:', error));
+}
+
+async function httpPatchRequest(theUrl, updatedField) {
+    return await fetch(theUrl, {
+        method: 'PATCH',
+        body: JSON.stringify(updatedField),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        }
+    })
+        .catch(error => console.error('Error:', error));
+}
+
+async function httpDeleteRequest(theUrl) {
+    return await fetch(theUrl, {
+        method: 'DELETE'
+    })
+        .catch(error => console.error('Error:', error));
+}

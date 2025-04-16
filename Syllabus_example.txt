@@ -1,0 +1,31 @@
+2019-2020 SYLLABUS MATH 0010 INTRODUCTION TO CALCULUS
+Kellenberg Memorial High School- Revised  June, 2019
+
+First Trimester:
+Preliminary Chapter - Trigono1netry and radian measure revie,v. Chapter 1 - Limits
+1-0 l	Simple Graphs, Useful Terms and a New Notation 1-02	 Evaluating Limits Analytically
+1-03	 More Analytic Techniques for Evaluating Limits 1-04	The Difference Quotient Fo1mula
+1-05	Special Limits, Part A - One-Sided Limits
+1-06	Special Limits, Part B - Infinite Limits and Limits at Infinity 1-07	Special Limits, Part C - Interesting and Unusual Limits
+1-08	Continuity
+1-09	The Intermediate Value Theorem 1-10	 Definition of the Limit, Epsilonics
+
+Chapter 2 - Differentiation
+2-01	The Tangent Line Problem 2-02 Basic Differentiation Rules 2-03  Rates of Change, Part l
+2-04	The Product and Quotient Rules for Derivatives 2-05	 Derivatives of Trigonometric Functions
+2-05	 Higher Order Derivatives 2-06	The Chain Rule
+2-07	Implicit Differentiation
+2-08	Related Rates, Part 2
+
+
+Second Tri1nester:
+
+Chapter 3 -  Applications  ofDe,;vatives
+3-01	Derivatives and Critical Points 3-02	Relative Extrema
+3-03	First and Second Derivative Tests
+3-04	 Increasing and Decreasing Inte1vals 3-05	Concavity and Points of Inflection 3-06	 Optimization Problems, Part A
+3-07	Optimization Problems, Part B 3-08	Optimization Problems, Part C
+3-09	Economics and Marginal Analysis 3-10	 Differentials and E1Tor Analysis
+3-11  Related Rates, Part A 3-12  Related Rates, Part B 3-13   Newton's Method
+
+
