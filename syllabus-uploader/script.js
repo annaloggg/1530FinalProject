@@ -158,3 +158,4 @@ async function httpDeleteRequest(theUrl) {
     })
         .catch(error => console.error('Error:', error));
 }
+
