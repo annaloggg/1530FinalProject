@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Doom Schooling | Profile</title>
+    <link rel="stylesheet" href="/src/css/home.css">
+    <script src="/src/scripts/courses.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="/src/html/home.html">
+            <img id="logo" src="/src/assets/DoomSchoolLogo.png">
+        </a>
+        <form id="search-inputs" action="/home">
+            <div class="dropdown">
+                <button class="button-no-bg" type="button">
+                    <img id="filter-icon" src="/src/assets/filterIcon.png">
+                </button>
+                <div id="course-dropdown">
+                    <p>Filter by course</p>
+                    <ul id="course-filter-list">
+                        <li>CS 1530</li>
+                        <li>CS 1666</li>
+                        <li>CS 449</li>
+                    </ul>
+                </div>
+            </div>
+            <input id="video-search" type="search" placeholder="Search for videos...">
+            <button id="search-submit-button" type="submit">
+                <img id="search-icon" src="/src/assets/searchIcon.png">
+            </button>
+        </form>
+        <img id="profile-pic" src="/src/assets/profileIcon.png">
+    </header>
+    <hr>
+    <div id="main-page-content">
+        <div id="side-nav">
+            <ul>
+                <h2>Your Pages</h2>
+                <li><a href=href="/src/html/home.html">For You</a></li>
+                <div>
+                    <h2>Saved Videos</h2>
+                    <li><a href="/src/html/home.html">CS 1530</a></li>
+                    <li><a href="/src/html/home.html">CS 1666</a></li>
+                    <li><a href="/src/html/home.html">CS 449</a></li>
+                </div>
+
+            </ul>
+        </div>
+        <div id="course-content">
+            <div id="user-info-div">
+                <img id="profile-pic-main" src="/src/assets/profileIcon.png">
+                <div id="user-info">
+                    <h1>Example Username</h1>
+                    <p>Example@hotmail.com</p>
+                    <p><span>University of Pittsburgh</span></p>
+                </div>
+            </div>
+            <h1 id="course-title">Your Courses</h1>
+            <div id="user-courses">
+                <!-- <div class="course-card">
+                    <h2>CS 1530</h2>
+                    <div id="syllabus-info">
+                        <h3>Uploaded Syllabus:</h3>
+                        <p>1530_Syllabus.pdf</p>
+                        <button class="edit-button" type="button"><img class="pencil-icon"
+                                src="/src/assets/pencilIcon.png"></button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <h2>CS 1666</h2>
+                    <div id="syllabus-info">
+                        <h3>Uploaded Syllabus:</h3>
+                        <p>1666_Syllabus.pdf</p>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <h2>CS 449</h2>
+                    <div id="syllabus-info">
+                        <h3>Uploaded Syllabus:</h3>
+                        <p>449_Syllabus.pdf</p>
+                    </div>
+                </div> -->
+            </div>
+            <div id="add-course">
+                <h3>Add another course</h3>
+                <button type="button" id="add-course-button">+</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
