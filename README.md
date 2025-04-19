@@ -8,7 +8,7 @@ This is the final project for course 1530. The project includes a local database
 
 🗃️ Database Setup
 
-Make sure you have json-server installed.
+Make sure json-server has been installed.
 To start the local database, run the following command:
 
 npx json-server --watch db.json --port 8000
