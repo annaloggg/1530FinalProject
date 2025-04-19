@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus Details</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="logo">
+            <img src="../logo.png" alt="Logo">
+        </div>
+        <div class="avatar">
+            <img src="../avatar.png" alt="avatar">
+        </div>
+    </div>
+    <div class="side-bar">
+        <ul>
+            <li><a href="Courses.html" class="active">Courses</a></li>
+            <hr>
+            <li><a href="../syllabus-uploader/upload-syllabus.html">Syllabus Uploader</a></li>
+            <hr>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="container-header">
+            <div class="back-button">
+                <a href="../history-upload/Courses.html">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Courses
+                </a>
+            </div>
+            <h1 id="course-title">Loading course details...</h1>
+            <p class="subtitle" id="course-subtitle"></p>
+        </div>
+        <div class="container-body">
+            <div id="loading-indicator" class="loading">
+                <div class="spinner"></div>
+                <span>Loading syllabus content...</span>
+            </div>
+            <div id="syllabus-content" class="syllabus-content hidden">
+                <!-- Content will be loaded here by JavaScript -->
+            </div>
+            <div id="error-message" class="error-message hidden">
+                <p>Failed to load syllabus content. Please try again later.</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
