@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Doom Schooling | Home</title>
     <link rel="stylesheet" href="/src/css/home.css">
+    <script src="/src/js/matchLogic.js" defer></script>
 </head>
 
 <body>
@@ -20,9 +21,9 @@
                 <div id="course-dropdown">
                     <p>Filter by course</p>
                     <ul id="course-filter-list">
-                        <li>CS 1530</li>
-                        <li>CS 1666</li>
-                        <li>CS 449</li>
+                        <li><button type="button" onclick="runMatchLogic('MATH 0220')">MATH 0220</button></li>
+                        <li><button type="button" onclick="runMatchLogic('CS 1542')">CS 1542</button></li>
+                        <li><button type="button" onclick="runMatchLogic('HIS 1203')">HIS 1203</button></li>
                     </ul>
                 </div>
             </div>
@@ -34,36 +35,179 @@
         <a href="/src/html/profile.html">
             <img id="profile-pic" src="/src/assets/profileIcon.png">
         </a>
-
     </header>
+
+    <h1>Recommended Videos</h1>
+    <div id="results"></div>
+
+    <script>
+        const videos = JSON.parse(localStorage.getItem("recommendedVideos") || "[]");
+        const container = document.getElementById("results");
+
+        if (videos.length === 0) {
+            container.innerHTML = "<p>No matching videos found.</p>";
+        } else {
+            videos.forEach(({ url, title }) => {
+                const div = document.createElement("div");
+                const link = document.createElement("a");
+                link.href = url;
+                link.textContent = title;
+                link.target = "_blank";
+                div.appendChild(link);
+                container.appendChild(div);
+            });
+        }
+    </script>
+
     <hr>
     <div id="main-page-content">
         <div id="side-nav">
             <ul>
                 <h2>Your Pages</h2>
-                <li><a href=href="/src/html/home.html">For You</a></li>
+
+                <li><a href="/src/html/home.html">For You</a></li>
                 <div>
                     <h2>Saved Videos</h2>
                     <li><a href="/src/html/home.html">CS 1530</a></li>
                     <li><a href="/src/html/home.html">CS 1666</a></li>
                     <li><a href="/src/html/home.html">CS 449</a></li>
                 </div>
-
             </ul>
         </div>
-        <div id="video-player">
-            <iframe width="1000" height="563" src="https://www.youtube.com/embed/dGErPY6cano" frameborder="0">
-            </iframe>
-            <div id="video-action-buttons">
-                <button class="action-buttons" type="button" name="save">
-                    <img id="saveIcon" src="/src/assets/saveIcon.png">
-                </button>
-                <button class="action-buttons" name="quiz">
-                    <img id="quizIcon" src="/src/assets/quizIcon.png">
-                </button>
+
+        <div id="video-stack">
+            <div id="video-player">
+                <iframe width="1000" height="563" src="https://www.youtube.com/embed/tXNUD8NCmcU"
+                    frameborder="0"></iframe>
+                <div id="video-action-buttons">
+                    <button class="action-buttons" type="button" name="save">
+                        <img id="saveIcon" src="/src/assets/saveIcon.png">
+                    </button>
+                    <button class="action-buttons" name="quiz">
+                        <img id="quizIcon" src="/src/assets/quizIcon.png">
+                    </button>
+                </div>
+            </div>
+
+            <div id="video-player">
+                <iframe width="1000" height="563" src="https://www.youtube.com/embed/Prv_X12VWVA"
+                    frameborder="0"></iframe>
+                <div id="video-action-buttons">
+                    <button class="action-buttons" type="button" name="save">
+                        <img id="saveIcon" src="/src/assets/saveIcon.png">
+                    </button>
+                    <button class="action-buttons" name="quiz">
+                        <img id="quizIcon" src="/src/assets/quizIcon.png">
+                    </button>
+                </div>
+            </div>
+
+            <div id="video-player">
+                <iframe width="1000" height="563" src="https://www.youtube.com/embed/sWNcMRCV98M"
+                    frameborder="0"></iframe>
+                <div id="video-action-buttons">
+                    <button class="action-buttons" type="button" name="save">
+                        <img id="saveIcon" src="/src/assets/saveIcon.png">
+                    </button>
+                    <button class="action-buttons" name="quiz">
+                        <img id="quizIcon" src="/src/assets/quizIcon.png">
+                    </button>
+                </div>
+            </div>
+
+            <div id="video-player">
+                <iframe width="1000" height="563" src="https://www.youtube.com/embed/ctQC0eXxIUc"
+                    frameborder="0"></iframe>
+                <div id="video-action-buttons">
+                    <button class="action-buttons" type="button" name="save">
+                        <img id="saveIcon" src="/src/assets/saveIcon.png">
+                    </button>
+                    <button class="action-buttons" name="quiz">
+                        <img id="quizIcon" src="/src/assets/quizIcon.png">
+                    </button>
+                </div>
+            </div>
+
+            <div id="video-player">
+                <iframe width="1000" height="563" src="https://www.youtube.com/embed/YDacLL70V5M"
+                    frameborder="0"></iframe>
+                <div id="video-action-buttons">
+                    <button class="action-buttons" type="button" name="save">
+                        <img id="saveIcon" src="/src/assets/saveIcon.png">
+                    </button>
+                    <button class="action-buttons" name="quiz">
+                        <img id="quizIcon" src="/src/assets/quizIcon.png">
+                    </button>
+                </div>
+            </div>
+
+            <div id="video-player">
+                <iframe width="1000" height="563" src="https://www.youtube.com/embed/rA-T4VPenD4"
+                    frameborder="0"></iframe>
+                <div id="video-action-buttons">
+                    <button class="action-buttons" type="button" name="save">
+                        <img id="saveIcon" src="/src/assets/saveIcon.png">
+                    </button>
+                    <button class="action-buttons" name="quiz">
+                        <img id="quizIcon" src="/src/assets/quizIcon.png">
+                    </button>
+                </div>
+            </div>
+
+            <div id="video-player">
+                <iframe width="1000" height="563" src="https://www.youtube.com/embed/29oEuGgD8cI "
+                    frameborder="0"></iframe>
+                <div id="video-action-buttons">
+                    <button class="action-buttons" type="button" name="save">
+                        <img id="saveIcon" src="/src/assets/saveIcon.png">
+                    </button>
+                    <button class="action-buttons" name="quiz">
+                        <img id="quizIcon" src="/src/assets/quizIcon.png">
+                    </button>
+                </div>
+            </div>
+
+            <div id="video-player">
+                <iframe width="1000" height="563" src="https://www.youtube.com/embed/pFag4mBsO1I"
+                    frameborder="0"></iframe>
+                <div id="video-action-buttons">
+                    <button class="action-buttons" type="button" name="save">
+                        <img id="saveIcon" src="/src/assets/saveIcon.png">
+                    </button>
+                    <button class="action-buttons" name="quiz">
+                        <img id="quizIcon" src="/src/assets/quizIcon.png">
+                    </button>
+                </div>
+            </div>
+
+            <div id="video-player">
+                <iframe width="1000" height="563" src="https://www.youtube.com/embed/JodJZjJtECE"
+                    frameborder="0"></iframe>
+                <div id="video-action-buttons">
+                    <button class="action-buttons" type="button" name="save">
+                        <img id="saveIcon" src="/src/assets/saveIcon.png">
+                    </button>
+                    <button class="action-buttons" name="quiz">
+                        <img id="quizIcon" src="/src/assets/quizIcon.png">
+                    </button>
+                </div>
+            </div>
+
+            <div id="video-player">
+                <iframe width="1000" height="563" src="https://www.youtube.com/embed/3LSNqYT-BQA"
+                    frameborder="0"></iframe>
+                <div id="video-action-buttons">
+                    <button class="action-buttons" type="button" name="save">
+                        <img id="saveIcon" src="/src/assets/saveIcon.png">
+                    </button>
+                    <button class="action-buttons" name="quiz">
+                        <img id="quizIcon" src="/src/assets/quizIcon.png">
+                    </button>
+                </div>
             </div>
         </div>
     </div>
+
 
 </body>
 
