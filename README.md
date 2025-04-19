@@ -1,7 +1,7 @@
 
 # 1530 Final Project
 
-This is the final project for course 1530. The project includes a local database and a frontend served through a static HTML file.
+This is the final project for course 1530. The project includes a local database and a frontend served through HTML file.
 
 
 
