@@ -1,5 +1,5 @@
 var courseURL = new URL("http://localhost:8000/Courses");
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Get DOM elements
     const fileInput = document.getElementById('fileInput');
     const fileInfo = document.getElementById('fileInfo');
@@ -9,48 +9,54 @@ document.addEventListener('DOMContentLoaded', function() {
     const fileContent = document.getElementById('fileContent');
     const clearButton = document.getElementById('clearButton');
     const analyzeButton = document.getElementById('analyzeButton');
+    const syllabusTitle = document.getElementById('upload-syllabus-title');
 
-    // Deal with file input change event
-    fileInput.addEventListener('change', function(event) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const courseId = urlParams.get("id");
+    retrieveAndDisplayOneCourse(courseId).then((course) => {
+        console.log(course);
+        syllabusTitle.textContent = `Update Syllabus for ${course.Subject} ${course.CourseCode} ${course.CourseName}`;
+    })
+    fileInput.addEventListener('change', function (event) {
         const file = event.target.files[0];
         if (!file) return;
         // show file name
         fileName.textContent = file.name;
         fileInfo.classList.remove('hidden');
-        
+
         // show loading
         loadingIndicator.classList.remove('hidden');
-        
+
         // hide content preview
         contentPreview.classList.add('hidden');
 
         // read file
         const reader = new FileReader();
-        
-        reader.onload = function(e) {
+
+        reader.onload = function (e) {
             // hide loading
             loadingIndicator.classList.add('hidden');
-            
+
             // show preview
             const content = e.target.result;
             fileContent.textContent = content;
             contentPreview.classList.remove('hidden');
-            
+
             // store in localstorage
             localStorage.setItem('syllabusContent', content);
             localStorage.setItem('syllabusFileName', file.name);
         };
-        
-        reader.onerror = function() {
+
+        reader.onerror = function () {
             loadingIndicator.classList.add('hidden');
             alert('error in reading file');
         };
-        
+
         reader.readAsText(file);
     });
 
     // clearButton
-    clearButton.addEventListener('click', function() {
+    clearButton.addEventListener('click', function () {
         fileInput.value = '';
         fileInfo.classList.add('hidden');
         contentPreview.classList.add('hidden');
@@ -59,43 +65,42 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // uploadButton
-    analyzeButton.addEventListener('click', function() {
+    analyzeButton.addEventListener('click', function () {
         // Check if empty
         if (!localStorage.getItem('syllabusContent')) {
             alert('Upload a syllabus file first!');
             return;
         }
 
-        const syllabusContent=localStorage.getItem("syllabusContent");
+        const syllabusContent = localStorage.getItem("syllabusContent");
         console.log(syllabusContent);
-        addOneCourseEntry(syllabusContent).then(()=>{
+        updateExistingCourse(courseId, syllabusContent).then(() => {
             localStorage.removeItem('syllabusContent');
             localStorage.removeItem('syllabusFileName');
         })
 
         window.location.href = "/src/html/profile.html";
-        
     });
 
     // Drag and drop
     const uploadArea = document.querySelector('.upload-area');
-    
-    uploadArea.addEventListener('dragover', function(e) {
+
+    uploadArea.addEventListener('dragover', function (e) {
         e.preventDefault();
         uploadArea.style.backgroundColor = '#eef6fd';
         uploadArea.style.borderColor = '#3498db';
     });
-    
-    uploadArea.addEventListener('dragleave', function() {
+
+    uploadArea.addEventListener('dragleave', function () {
         uploadArea.style.backgroundColor = '#f9f9f9';
         uploadArea.style.borderColor = '#ccc';
     });
-    
-    uploadArea.addEventListener('drop', function(e) {
+
+    uploadArea.addEventListener('drop', function (e) {
         e.preventDefault();
         uploadArea.style.backgroundColor = '#f9f9f9';
         uploadArea.style.borderColor = '#ccc';
-        
+
         const file = e.dataTransfer.files[0];
         if (file) {
             fileInput.files = e.dataTransfer.files;
@@ -106,19 +111,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-async function addOneCourseEntry(courseSyllabusContent) {
+async function updateExistingCourse(courseId, syllabusContent) {
 
-
-    // creating a course object
-    let newCourse = {
-        "Subject" : "MATH",
-        "CourseCode" : "0010",
-        "CourseName" : "INTRODUCTION TO CALCULUS",
-        "SyllabusContent" : courseSyllabusContent
+    // getting a hold on all the fields in the page
+    let updateFields = {};
+    if (syllabusContent != "") {
+        updateFields["SyllabusContent"] = syllabusContent;
     }
+    if (Object.keys(updateFields).length !== 0) {
+        await httpPatchRequest(`${courseURL}/${courseId}`, updateFields);
+    }
+}
 
-    // issuing an HTTP Post Request
-    await httpPostRequest(courseURL, newCourse);
+async function retrieveAndDisplayOneCourse(id) {
+
+    let course = await httpGetRequest(`${courseURL}/${id}`);
+    return course;
 }
 
 async function httpGetRequest(theUrl) {
@@ -132,7 +140,7 @@ async function httpGetRequest(theUrl) {
         .catch(error => console.error('Error:', error));
 };
 
-async function httpPostRequest(theUrl, newBlog) {
+async function httpPostRequest(theUrl, newCourse) {
     return await fetch(theUrl, {
         method: 'POST',
         body: JSON.stringify(newBlog),

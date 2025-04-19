@@ -227,11 +227,19 @@ hr {
     padding-left: 100px;
 }
 
-#syllabus-info {
+#course-name {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+#course-name h3{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #add-course {
@@ -282,9 +290,15 @@ hr {
     background-color: #f1f1f1;
     padding: 1em;
     border-radius: 25px;
-    max-width: 35%;
+    width:27%;
     margin: 12px 12px;
 }
+
+.course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #d0d5dd;
+  }
 
 .course-card h2 {
     padding-bottom: 0px;
@@ -303,6 +317,24 @@ hr {
     border-style: none;
 
 }
+
+ /* Loading state */
+ .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+  
+  /* Error state */
+  .error-message {
+    color: #e53e3e;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff5f5;
+    border-radius: 6px;
+    margin-top: 20px;
+  }
 
 a {
     font-style: normal;

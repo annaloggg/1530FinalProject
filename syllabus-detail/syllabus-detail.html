@@ -1,57 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syllabus Details</title>
+    <title>Doom Schooling | Profile</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <div class="top-bar">
-        <div class="logo">
-            <img src="../logo.png" alt="Logo">
+    <header>
+        <a href="/src/html/home.html">
+            <img id="logo" src="/src/assets/DoomSchoolLogo.png">
+        </a>
+        <form id="search-inputs" action="/home">
+            <div class="dropdown">
+                <button class="button-no-bg" type="button">
+                    <img id="filter-icon" src="/src/assets/filterIcon.png">
+                </button>
+                <div id="course-dropdown">
+                    <p>Filter by course</p>
+                    <ul id="course-filter-list">
+                        <li>CS 1530</li>
+                        <li>CS 1666</li>
+                        <li>CS 449</li>
+                    </ul>
+                </div>
+            </div>
+            <input id="video-search" type="search" placeholder="Search for videos...">
+            <button id="search-submit-button" type="submit">
+                <img id="search-icon" src="/src/assets/searchIcon.png">
+            </button>
+        </form>
+        <a href="/src/html/profile.html">
+            <img id="profile-pic" src="/src/assets/profileIcon.png">
+        </a>
+    </header>
+    <hr>
+    <div id="main-page-content">
+        <div id="side-nav">
+            <ul>
+                <h2>Your Pages</h2>
+                <li><a href="/src/html/home.html">For You</a></li>
+                <div>
+                    <h2>Saved Videos</h2>
+                    <li><a href="/src/html/home.html">CS 1530</a></li>
+                    <li><a href="/src/html/home.html">CS 1666</a></li>
+                    <li><a href="/src/html/home.html">CS 449</a></li>
+                </div>
+                <div>
+                    <h2>More Courses</h2>
+                    <li><a href="/syllabus-uploader/upload-syllabus.html">Click to Add</a></li>
+                </div>
+                <div>
+                    <h2>About You</h2>
+                    <li><a href="/src/html/profile.html">Your Profile</a></li>
+                </div>
+            </ul>
         </div>
-        <div class="avatar">
-            <img src="../avatar.png" alt="avatar">
+        <div class="container">
+            <div class="container-header">
+                <div class="back-button">
+                    <a href="../src/html/profile.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                        </svg>
+                        Back to Profile
+                    </a>
+                </div>
+                <h1 id="course-title">Loading course details...</h1>
+                <p class="subtitle" id="course-subtitle"></p>
+            </div>
+            <div class="container-body">
+                <div id="loading-indicator" class="loading">
+                    <div class="spinner"></div>
+                    <span>Loading syllabus content...</span>
+                </div>
+                <div id="syllabus-content" class="syllabus-content hidden">
+                    <!-- Content will be loaded here by JavaScript -->
+                </div>
+                <div id="error-message" class="error-message hidden">
+                    <p>Failed to load syllabus content. Please try again later.</p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="side-bar">
-        <ul>
-            <li><a href="Courses.html" class="active">Courses</a></li>
-            <hr>
-            <li><a href="../syllabus-uploader/upload-syllabus.html">Syllabus Uploader</a></li>
-            <hr>
-        </ul>
-    </div>
-    <div class="container">
-        <div class="container-header">
-            <div class="back-button">
-                <a href="../history-upload/Courses.html">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
-                    </svg>
-                    Back to Courses
-                </a>
-            </div>
-            <h1 id="course-title">Loading course details...</h1>
-            <p class="subtitle" id="course-subtitle"></p>
-        </div>
-        <div class="container-body">
-            <div id="loading-indicator" class="loading">
-                <div class="spinner"></div>
-                <span>Loading syllabus content...</span>
-            </div>
-            <div id="syllabus-content" class="syllabus-content hidden">
-                <!-- Content will be loaded here by JavaScript -->
-            </div>
-            <div id="error-message" class="error-message hidden">
-                <p>Failed to load syllabus content. Please try again later.</p>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>

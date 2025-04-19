@@ -32,21 +32,30 @@
                 <img id="search-icon" src="/src/assets/searchIcon.png">
             </button>
         </form>
-        <img id="profile-pic" src="/src/assets/profileIcon.png">
+        <a href="/src/html/profile.html">
+            <img id="profile-pic" src="/src/assets/profileIcon.png">
+        </a>
     </header>
     <hr>
     <div id="main-page-content">
         <div id="side-nav">
             <ul>
                 <h2>Your Pages</h2>
-                <li><a href=href="/src/html/home.html">For You</a></li>
+                <li><a href="/src/html/home.html">For You</a></li>
                 <div>
                     <h2>Saved Videos</h2>
                     <li><a href="/src/html/home.html">CS 1530</a></li>
                     <li><a href="/src/html/home.html">CS 1666</a></li>
                     <li><a href="/src/html/home.html">CS 449</a></li>
                 </div>
-
+                <div>
+                    <h2>More Courses</h2>
+                    <li><a href="/syllabus-uploader/upload-syllabus.html">Click to Add</a></li>
+                </div>
+                <div>
+                    <h2>About You</h2>
+                    <li><a href="/src/html/profile.html">Your Profile</a></li>
+                </div>
             </ul>
         </div>
         <div id="course-content">
@@ -84,9 +93,10 @@
                     </div>
                 </div> -->
             </div>
-            <div id="add-course">
-                <h3>Add another course</h3>
-                <button type="button" id="add-course-button">+</button>
+            <div id="add-course">             
+                    <h3><a href="/syllabus-uploader/upload-syllabus.html">Add another course</a></h3>
+                    <button type="button" id="add-course-button"><a href="/syllabus-uploader/upload-syllabus.html">+</a></button>
+                </a>
             </div>
         </div>
     </div>
