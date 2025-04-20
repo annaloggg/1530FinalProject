@@ -5,7 +5,7 @@ This is the final project for course 1530. The project includes a local database
 
 
 
-## Database Setup
+## First Step: Database Setup
 
 Make sure json-server has been installed.
 To start the local database, run the following command:
@@ -16,7 +16,7 @@ This will launch the database server at http://localhost:8000.
 
 
 
-## Running the Project Locally
+## Second Step: Running the Project Locally
 
 To view the project in your browser:
 	1.	Navigate to /src/html/home.html
