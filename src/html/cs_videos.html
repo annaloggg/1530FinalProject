@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Doom Schooling | Home</title>
+    <link rel="stylesheet" href="/src/css/home.css">
+    <script src="/src/js/matchLogic.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="/src/html/home.html">
+            <img id="logo" src="/src/assets/DoomSchoolLogo.png">
+        </a>
+        <form id="search-inputs" action="/home">
+            <div class="dropdown">
+                <button class="button-no-bg" type="button">
+                    <img id="filter-icon" src="/src/assets/filterIcon.png">
+                </button>
+                <div id="course-dropdown">
+                    <p>Filter by course</p>
+                    <ul id="course-filter-list">
+                        <li><button type="button" onclick="runMatchLogic('MATH 0220')">MATH 0220</button></li>
+                        <li><button type="button" onclick="runMatchLogic('CS 1542')">CS 1542</button></li>
+                        <li><button type="button" onclick="runMatchLogic('HIS 1203')">HIS 1203</button></li>
+                    </ul>
+                </div>
+            </div>
+            <input id="video-search" type="search" placeholder="Search for videos...">
+            <button id="search-submit-button" type="submit">
+                <img id="search-icon" src="/src/assets/searchIcon.png">
+            </button>
+        </form>
+        <a href="/src/html/profile.html">
+            <img id="profile-pic" src="/src/assets/profileIcon.png">
+        </a>
+    </header>
+
+    <h1>Recommended Videos</h1>
+    <div id="results"></div>
+
+    <script>
+        const videos = JSON.parse(localStorage.getItem("recommendedVideos") || "[]");
+        const container = document.getElementById("results");
+
+        if (videos.length === 0) {
+            container.innerHTML = "<p>No matching videos found.</p>";
+        } else {
+            videos.forEach(({ url, title }) => {
+                const div = document.createElement("div");
+                const link = document.createElement("a");
+                link.href = url;
+                link.textContent = title;
+                link.target = "_blank";
+                div.appendChild(link);
+                container.appendChild(div);
+            });
+        }
+    </script>
+
+    <hr>
+    <div id="main-page-content">
+        <div id="side-nav">
+            <ul>
+                <h2>Your Pages</h2>
+
+                <li><a href="/src/html/home.html">For You</a></li>
+                <div>
+                    <h2>Saved Videos</h2>
+                    <li><a href="/src/html/cs_videos.html">MATH 0220</a></li>
+                    <li><a href="/src/html/home.html">CS 1542</a></li>
+                    <li><a href="/src/html/home.html">HIS 1203</a></li>
+                </div>
+                <div>
+                    <h2>More Courses</h2>
+                    <li><a href="/syllabus-uploader/upload-syllabus.html">Click to Add</a></li>
+                </div>
+                <div>
+                    <h2>About You</h2>
+                    <li><a href="/src/html/profile.html">Your Profile</a></li>
+                </div>
+                
+
+            </ul>
+        </div>
+
+        <div id="video-stack">
+            <div id="video-player">
+                <iframe width="1000" height="563" src="https://www.youtube.com/embed/pFag4mBsO1I"
+                    frameborder="0"></iframe>
+                <div id="video-action-buttons">
+                    <button class="action-buttons" type="button" name="save">
+                        <img id="saveIcon" src="/src/assets/saveIcon.png">
+                    </button>
+                    <button class="action-buttons" name="quiz">
+                        <img id="quizIcon" src="/src/assets/quizIcon.png">
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
