@@ -19,8 +19,13 @@ body {
     font-family: 'Grunge', sans-serif;
     font-style: italic;
     color: rgb(0, 0, 0);
-    margin: 6px 16px;
     background-color: #ececec;
+    margin: 0px;
+}
+
+button {
+    font-family: 'Grunge', sans-serif;
+
 }
 
 header {
@@ -29,7 +34,8 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: grey;
+    background-color: rgb(209, 209, 209);
+    padding: 8px;
 }
 
 hr {
@@ -112,6 +118,7 @@ hr {
 #profile-pic {
     width: 64px;
     height: auto;
+    margin-right: 16px;
 }
 
 .button-no-bg {
@@ -157,10 +164,21 @@ hr {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 0px;
 }
 
 #course-filter-list li {
+    background-color: rgb(77, 77, 77);
+    color: #f1f1f1;
+    padding: 6px 12px;
+    margin: 8px;
+    border-radius: 24px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+#course-filter-list li:hover {
     background-color: rgb(0, 0, 0);
     color: #f1f1f1;
     padding: 6px 12px;
@@ -196,6 +214,11 @@ hr {
 
 #logo {
     width: 300px;
+    margin-left: 6px;
+}
+
+body h1 {
+    padding-left: 16px;
 }
 
 #course-dropdown {
@@ -302,6 +325,14 @@ hr {
     border-radius: 50%;
     width: fit-content
 }
+
+.course-button {
+    background: none;
+    border-style: none;
+    color: #f1f1f1;
+    text-align: center;
+}
+
 
 .edit-button:hover {
     background: rgb(68, 68, 68);
