@@ -241,6 +241,10 @@ body h1 {
     align-items: center;
 }
 
+#user-info-div h1 {
+    padding-left: 0px;
+}
+
 #user-info p {
     color: rgb(68, 68, 68);
 }
@@ -289,6 +293,7 @@ body h1 {
 #course-title {
     margin-bottom: 8px;
     margin-top: 64px;
+    padding-left: 0px;
 }
 
 #add-course h3 {

@@ -1,5 +1,5 @@
 var courseURL = new URL("http://localhost:8000/Courses");
-document.addEventListener("DOMContentLoaded", () =>  {
+document.addEventListener("DOMContentLoaded", () => {
     genCourseCards();
 });
 
@@ -67,17 +67,16 @@ function genCourseCards() {
 
                 })
             }
-        }) .catch((error) => {
+        }).catch((error) => {
             console.error("Error fetching course data:", error)
             // Show error message
             course_div.innerHTML = `
           <div class="error-message">
-            <p>Failed to load courses. Please try again later.</p>
-            <p>${error.message}</p>
+            <p>Cannot fetch courses at this time.</p>
           </div>
         `
         })
-    
+
 }
 
 function viewSyllabus(course) {
