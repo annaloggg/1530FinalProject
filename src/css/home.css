@@ -20,7 +20,7 @@ body {
     font-style: italic;
     color: rgb(0, 0, 0);
     margin: 6px 16px;
-    background-color: bisque;
+    background-color: #ececec;
 }
 
 header {
@@ -29,7 +29,7 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: beige;
+    background-color: grey;
 }
 
 hr {
@@ -78,6 +78,9 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* border-style: solid;
+    border-radius: 30px; */
+
 }
 
 .main-page-content {
