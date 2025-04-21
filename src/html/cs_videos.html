@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <title>Doom Schooling | Home</title>
     <link rel="stylesheet" href="/src/css/home.css">
-    <script src="/src/js/matchLogic.js" defer></script>
+    <!-- <script src="/src/js/matchLogic.js" defer></script> -->
+    <script src="/funky logic pt.2/js/matchLogic.js" defer></script>
 </head>
 
 <body>
@@ -21,9 +22,16 @@
                 <div id="course-dropdown">
                     <p>Filter by course</p>
                     <ul id="course-filter-list">
-                        <li><button type="button" onclick="runMatchLogic('MATH 0220')">MATH 0220</button></li>
+                        </a>
+                        <a href="math_videos.html">
+                            <button type="button">MATH 0220</button>
+                        </a>
+                        <a href="his_videos.htmål">
+                            <button type="button">HIS 1430</button>
+                        </a>
+                        <!-- <li><button type="button" onclick="runMatchLogic('MATH 0220')">MATH 0220</button></li>
                         <li><button type="button" onclick="runMatchLogic('CS 1542')">CS 1542</button></li>
-                        <li><button type="button" onclick="runMatchLogic('HIS 1203')">HIS 1203</button></li>
+                        <li><button type="button" onclick="runMatchLogic('HIS 1203')">HIS 1203</button></li> -->
                     </ul>
                 </div>
             </div>
@@ -40,7 +48,9 @@
     <h1>Recommended Videos</h1>
     <div id="results"></div>
 
-    <script>
+
+
+    <!-- <script>
         const videos = JSON.parse(localStorage.getItem("recommendedVideos") || "[]");
         const container = document.getElementById("results");
 
@@ -52,12 +62,12 @@
                 const link = document.createElement("a");
                 link.href = url;
                 link.textContent = title;
-                link.target = "_blank";
+                link.target = "home.html";
                 div.appendChild(link);
                 container.appendChild(div);
             });
         }
-    </script>
+    </script> -->
 
     <hr>
     <div id="main-page-content">
@@ -68,39 +78,72 @@
                 <li><a href="/src/html/home.html">For You</a></li>
                 <div>
                     <h2>Saved Videos</h2>
-                    <li><a href="/src/html/cs_videos.html">MATH 0220</a></li>
-                    <li><a href="/src/html/home.html">CS 1542</a></li>
-                    <li><a href="/src/html/home.html">HIS 1203</a></li>
+                    <li><a href="/src/html/home.html">MATH 0220</a></li>
+                    <li><a href="/src/html/home.html">CS 1666</a></li>
+                    <li><a href="/src/html/home.html">CS 449</a></li>
                 </div>
-                <div>
-                    <h2>More Courses</h2>
-                    <li><a href="/syllabus-uploader/upload-syllabus.html">Click to Add</a></li>
-                </div>
-                <div>
-                    <h2>About You</h2>
-                    <li><a href="/src/html/profile.html">Your Profile</a></li>
-                </div>
-                
-
             </ul>
         </div>
 
         <div id="video-stack">
-            <div id="video-player">
-                <iframe width="1000" height="563" src="https://www.youtube.com/embed/pFag4mBsO1I"
-                    frameborder="0"></iframe>
-                <div id="video-action-buttons">
-                    <button class="action-buttons" type="button" name="save">
-                        <img id="saveIcon" src="/src/assets/saveIcon.png">
-                    </button>
-                    <button class="action-buttons" name="quiz">
-                        <img id="quizIcon" src="/src/assets/quizIcon.png">
-                    </button>
+            <div id="video-stack">
+                <div id="video-player">
+                    <iframe width="1000" height="563" src="https://www.youtube.com/embed/pFag4mBsO1I"
+                        frameborder="0"></iframe>
+                    <div id="video-action-buttons">
+                        <button class="action-buttons" type="button" name="save">
+                            <img id="saveIcon" src="/src/assets/saveIcon.png">
+                        </button>
+                        <button class="action-buttons" name="quiz">
+                            <img id="quizIcon" src="/src/assets/quizIcon.png">
+                        </button>
+                    </div>
                 </div>
-            </div>
 
+
+            </div>
         </div>
     </div>
+
+    <!-- <script>
+        const keywordMap = {
+            "MATH 0220": ["integration", "calculus"],
+            "CS 1542": ["concurrency", "threads", "deadlock"],
+            "HIS 1203": ["industrial revolution", "empire", "treaty"]
+        };
+
+        async function runMatchLogic(courseCode) {
+            const keywords = keywordMap[courseCode].map(k => k.toLowerCase());
+            const iframes = document.querySelectorAll("iframe");
+
+            for (const iframe of iframes) {
+                try {
+                    await new Promise((resolve) => {
+                        if (iframe.contentDocument && iframe.contentDocument.readyState === "complete") {
+                            resolve();
+                        } else {
+                            iframe.onload = () => resolve();
+                        }
+                    });
+
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+                    const bodyText = doc.body.innerText.toLowerCase();
+
+                    const matches = keywords.some(kw => bodyText.includes(kw));
+
+                    if (!matches) {
+                        iframe.closest("#video-player").style.display = "none";
+                    } else {
+                        iframe.closest("#video-player").style.display = "block";
+                    }
+
+                } catch (err) {
+                    console.error("Could not access iframe content:", err);
+                    iframe.closest("#video-player").style.display = "none";
+                }
+            }
+        }
+    </script> -->
 
 
 </body>
