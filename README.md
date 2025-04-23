@@ -27,7 +27,7 @@ This will launch the database server at http://localhost:8000.
 ## Second Step: Running the Project Locally
 
 To view the project in your browser:
-	1.	Navigate to /src/html/home.html
-	2.	Open the file using Live Server (e.g., right-click → “Open with Live Server” in VS Code)
+	1.	Navigate to /src/html/home.html\ 
+	2.	Open the file using Live Server (e.g., right-click → “Open with Live Server” in VS Code)\ 
 
 
