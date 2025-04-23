@@ -218,7 +218,8 @@ hr {
 }
 
 body h1 {
-    padding-left: 16px;
+    margin-bottom: 8px;
+    margin-top: 40px;
 }
 
 #course-dropdown {
@@ -241,16 +242,14 @@ body h1 {
     align-items: center;
 }
 
-#user-info-div h1 {
-    padding-left: 0px;
-}
-
 #user-info p {
     color: rgb(68, 68, 68);
 }
 
 #side-nav {
     min-width: 15%;
+    margin-top: 24px;
+    margin-right: 24px;
 }
 
 #course-content {
@@ -288,7 +287,10 @@ body h1 {
     color: #f1f1f1;
 }
 
-
+#video-section {
+    display: flex;
+    flex-direction: column;
+}
 
 #course-title {
     margin-bottom: 8px;
