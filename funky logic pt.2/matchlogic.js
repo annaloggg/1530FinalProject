@@ -3,7 +3,7 @@
 const keywordMap = {
   "MATH 0220": ["integration", "calculus"],
   "CS 1542": ["concurrency", "threads", "deadlock"],
-  "HIS 1203": ["industrial revolution", "empire", "treaty"]
+  "HIS 1203": ["industrial revolution", "empire", "treaty"] 
 };
 
 // Point to your folder of video HTMLs
